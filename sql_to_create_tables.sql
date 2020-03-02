@@ -2,7 +2,9 @@ USE hltv_db;
 
 CREATE TABLE IF NOT EXISTS Map(
     map_id INT AUTO_INCREMENT PRIMARY KEY,
-    is_ct_gavoured_side BOOLEAN NOT NULL
+    is_ct_favoured_side BOOLEAN,
+    map_name VARCHAR(20) NOT NULL,
+    is_active_duty BOOLEAN NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS Team(
