@@ -1,6 +1,6 @@
-var mysql = require('mysql');
+const mysql = require('mysql');
 
-var connection = mysql.createConnection({
+const connection = mysql.createConnection({
   host     : 'hltv-db-instance.c0bndg8bgr11.us-east-2.rds.amazonaws.com',
   port     : '3306',
   user     : 'rishant',
