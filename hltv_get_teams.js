@@ -13,14 +13,14 @@ const con = mysql.createConnection({
 HLTV.getTeamRanking().then((res) => {
     teams = []
     for (i=0; i<res.length; i++) {
-        teams.push([res[i].team.id, 0.0]);
+        teams.push([res[i].team.id, res[i].team.name]);
     }
     var sql = "INSERT INTO Team (hltv_id, avg_player_rating) VALUES ?";
     var values = teams;
-    //console.log(values);
-    con.query(sql, [values], function(err, result) {
-        if (err) throw err;
-        console.log("Number of records inserted: " + result.affectedRows);
-    });
+    console.log(values);
+    // con.query(sql, [values], function(err, result) {
+    //     if (err) throw err;
+    //     console.log("Number of records inserted: " + result.affectedRows);
+    // });
     con.end();
 });
